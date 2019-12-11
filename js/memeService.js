@@ -36,6 +36,6 @@ function draw() {
     gCtx.lineWidth = 5
     gCtx.strokeText(gMeme.txts[0].line, 50, 50);
     gCtx.fillStyle="white"
-    gCtx.fillText(gMeme.txts[0].line, 50, 45);
+    gCtx.fillText(gMeme.txts[0].line, 50, 50);
 }
 draw();
