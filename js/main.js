@@ -2,6 +2,7 @@
 
 function init() {
     renderGallery();
+    document.querySelector('#text-input').value = gMeme.txts[0].line
 }
 
 
@@ -32,35 +33,47 @@ function showGallery() {
 }
 
 function onFontUp() {
-    gMeme.txts[0].size += 1;
+
+    gMeme.txts[gCurrLine].size += 1;
     draw();
 }
 
 function onFontDown() {
-    gMeme.txts[0].size -= 1;
+    gMeme.txts[gCurrLine].size -= 1;
     draw();
 }
 
 function onMoveUp() {
-    console.log('up');
-    direction -= 10;
+    gMeme.txts[gCurrLine].direction -= 10;
     draw();
 }
 
 function onMoveDown() {
-    console.log('down');
-    direction += 10;
+    gMeme.txts[gCurrLine].direction += 10;
     draw();
 }
 
 function onSwitchLines() {
     if (gCurrLine === 0) {
         gCurrLine = 1;
-        document.querySelector('#text-input').value = ""
-    }else {
+        document.querySelector('#text-input').value = gMeme.txts[1].line;
+        document.querySelector('#fill-color').value = gMeme.txts[1].fillcolor;
+        document.querySelector('#stroke-color').value = gMeme.txts[1].strokecolor;
+       
+    } else {
         gCurrLine = 0;
-        document.querySelector('#text-input').value = ""
+        document.querySelector('#text-input').value = gMeme.txts[0].line;
+        document.querySelector('#fill-color').value = gMeme.txts[0].fillcolor;
+        document.querySelector('#stroke-color').value = gMeme.txts[0].strokecolor;
     }
-
-
+}
+function onUpdateFillColor(){
+    console.log('fill');
+    gMeme.txts[gCurrLine].fillcolor = document.querySelector('#fill-color').value;
+    draw();
+}
+function onUpdateStrokeColor(){
+    console.log(222);
+    gMeme.txts[gCurrLine].strokecolor = document.querySelector('#stroke-color').value;
+    draw();
 }
