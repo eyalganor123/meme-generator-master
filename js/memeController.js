@@ -2,7 +2,7 @@
 function showText(){
 var elTextInput=document.querySelector('#text-input');
 var text = elTextInput.value;
-console.log(text);
+changeGMeme(text);
 }
 
 function draw() {

@@ -95,6 +95,7 @@ a {
     color: #040a2c;}
 .search{
     height:102px;
+    background-color: #fff;
 }
 .main{
     height:932px;
@@ -122,3 +123,13 @@ footer{
     letter-spacing: normal;
     text-align: left;
     color: #000000;}
+.editor{
+    z-index:3
+}
+.gallery{
+    position:fixed;
+    top:0;
+}
+.hide{
+ display:none
+}

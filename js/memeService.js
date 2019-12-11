@@ -2,28 +2,54 @@ var gCanvas = document.querySelector('#myCanvas');
 var gCtx = gCanvas.getContext('2d');
 
 var gImgs = [{
-    id: 1,
+    id:0,
     url: './img/003.jpg',
     keywords: ['happy']
 }, {
-    id: 2,
+    id: 1,
     url: './img/005.jpg',
+    keywords: ['angry']
+},{
+    id: 2,
+    url: './img/006.jpg',
+    keywords: ['angry']
+},{
+    id: 3,
+    url: './img/8.jpg',
+    keywords: ['angry']
+},{
+    id: 4,
+    url: './img/9.jpg',
+    keywords: ['angry']
+},{
+    id: 5,
+    url: './img/004.jpg',
+    keywords: ['angry']
+},{
+    id: 6,
+    url: './img/leo.jpg',
+    keywords: ['angry']
+},{
+    id: 7,
+    url: './img/12.jpg',
+    keywords: ['angry']
+},{
+    id: 8,
+    url: './img/putin.jpg',
     keywords: ['angry']
 }];
 var gMeme = {
-    selectedImgId: 1,
+    selectedImgId:1,
     selectedTxtIdx: 0,
     txts: [{
-        line: 'I never eat Falafel',
+        line: 'I love Falafel',
         size: 50,
     }]
 }
 
 function draw() {
     const img = document.querySelector('img');
-    console.log(img);
     img.src = gImgs[gMeme.selectedImgId].url;
-    console.log(img);
 
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
     gImg = new Image();
@@ -38,4 +64,11 @@ function draw() {
     gCtx.fillStyle="white"
     gCtx.fillText(gMeme.txts[0].line, 50, 50);
 }
+
+function changeGMeme(text){
+   gMeme.txts[0].line = text;
+   draw();
+}
+
+
 draw();
