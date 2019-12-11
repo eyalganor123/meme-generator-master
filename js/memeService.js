@@ -1,5 +1,6 @@
 var gCanvas = document.querySelector('#myCanvas');
 var gCtx = gCanvas.getContext('2d');
+let gCurrLine=0;
 
 var gImgs = [{
     id:0,
@@ -44,9 +45,12 @@ var gMeme = {
     txts: [{
         line: 'I love Falafel',
         size: 50,
+    }, {
+        line: 'but not today',
+        size: 50
     }]
 }
-
+let direction = 0
 function draw() {
     const img = document.querySelector('img');
     img.src = gImgs[gMeme.selectedImgId].url;
@@ -60,13 +64,15 @@ function draw() {
     gCtx.font =`${size}px Impact`;
     gCtx.strokeStyle="black";
     gCtx.lineWidth = 5
-    gCtx.strokeText(gMeme.txts[0].line, 50, 50);
+    gCtx.strokeText(gMeme.txts[0].line, 50, 80+direction);
+    gCtx.strokeText(gMeme.txts[1].line, 50, 350+direction);
     gCtx.fillStyle="white"
-    gCtx.fillText(gMeme.txts[0].line, 50, 50);
+    gCtx.fillText(gMeme.txts[0].line, 50, 80+direction);
+    gCtx.fillText(gMeme.txts[1].line, 50, 350+direction);
 }
 
 function changeGMeme(text){
-   gMeme.txts[0].line = text;
+   gMeme.txts[gCurrLine].line = text;
    draw();
 }
 

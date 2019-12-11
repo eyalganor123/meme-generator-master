@@ -6,6 +6,7 @@
 
 * {
     box-sizing: border-box;
+    outline:0
 }
 
 html {
@@ -63,7 +64,7 @@ a {
     grid-template-columns:repeat(3,300px);
     grid-template-rows:repeat(3,300px);
     grid-gap:10px;
-    overflow: scroll;
+    overflow: scroll;   
 }
 /* list helpers */
 
@@ -123,13 +124,21 @@ footer{
     letter-spacing: normal;
     text-align: left;
     color: #000000;}
-.editor{
-    z-index:3
-}
+
 .gallery{
     position:fixed;
     top:0;
+    right: 0;
+    left: 0;
 }
 .hide{
- display:none
+ display:none;
+}
+.go-back{
+    width:100px;
+    height:30px;
+    padding:10px;
+    text-align:center;
+    background-color: rgb(185, 185, 224);
+    border-radius:20px
 }

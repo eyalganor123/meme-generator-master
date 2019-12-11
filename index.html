@@ -2,50 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Meme Generator</title>
-</head><body onload="init()">
-  <section class="editor">
-<img src="./img/003.jpg" alt="" width=500 height=500 hidden>
-<img src="./img/005.jpg" alt="" width=500 height=500 hidden>   
-<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Meme Generator</title>
+</head>
 
-  <input type="text" name="text-input" id="text-input" onkeyup="showText()">
-  <div onclick=showGallery()>Go Back</div>
-  <script src="./js/memeService.js"></script>
-  <script src="./js/memeController.js"></script>
-</section>
-<section class="gallery">
-  <nav class="nav-bar-bg flex align-center space-between">
+<body onload="init()">
+  <!-- editor -->
+
+  <section class="editor">
+    <img src="./img/003.jpg" alt="" width=500 height=500 hidden>
+    <img src="./img/005.jpg" alt="" width=500 height=500 hidden>
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+    <input type="text" name="text-input" id="text-input" onkeyup="showText()">
+    <button onclick="onFontUp()">font up</button>
+    <button onclick="onFontDown()">font down</button>
+    <button onclick="onMoveUp()">up arrow</button>
+    <button onclick="onMoveDown()">down arrow</button>
+    <button onclick="onSwitchLines()">switch lines</button>
+ 
+    <div onclick=showGallery() class="go-back">Go Back</div>
+    <script src="./js/memeService.js"></script>
+    <script src="./js/memeController.js"></script>
+  </section>
+
+<!-- gallery -->
+
+  <section class="gallery">
+    <nav class="nav-bar-bg flex align-center space-between">
       <div class="logo">logo</div>
       <div class="nav-container flex">
-          <div class="gallery">Gallery</div>
+        <div class="gallery">Gallery</div>
 
-          <div class="about">About</div>
+        <div class="about">About</div>
       </div>
-  </nav>
-  <div class="search flex align-center justify-center">search</div>
-  <main class="main grid" id="images">
+    </nav>
+    <div class="search flex align-center justify-center">search</div>
+    <main class="main grid" id="images">
 
-  </main>
-  <div class="bio flex justify-center align-center">
+    </main>
+    <div class="bio flex justify-center align-center">
       <img class="my-image" src="./img/003.jpg" alt="">
       <div class="title flex column">Donald j. Trump
-          <div class="text">sdfsdfsdfsdfsdf</div>
+        <div class="text">sdfsdfsdfsdfsdf</div>
       </div>
 
 
 
-  </div>
-  <footer class="flex column align-center justify-center">
+    </div>
+    <footer class="flex column align-center justify-center">
       <div class="logo">logo</div>
       <div class="right">All rights reserved 2019</div>
-  </footer>
-  <script src="./js/main.js"></script>
-</section>
+    </footer>
+    <script src="./js/main.js"></script>
+  </section>
 </body>
 
 </html>
