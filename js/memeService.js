@@ -48,16 +48,16 @@ var gMeme = {
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
-        x:50,
-        y:80
+        x: 50,
+        y: 80
     }, {
         line: '',
         size: 50,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
-        x:50,
-        y:350
+        x: 50,
+        y: 350
     }],
 }
 
@@ -70,21 +70,24 @@ function draw() {
     gImg.onload = () => {
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height)
     };
+
     gCtx.lineWidth = 6;
-  
-    gMeme.txts.forEach(function(object){
+
+    gMeme.txts.forEach(function (object) {
         gCtx.font = `${object.size}px Impact`;
         gCtx.strokeStyle = object.strokecolor;
         gCtx.strokeText(object.line, object.x, object.y + object.direction);
-    
+
         gCtx.fillStyle = object.fillcolor;
         gCtx.fillText(object.line, object.x, object.y + object.direction);
+
+
     });
     document.querySelector('#text-input').value = gMeme.txts[gCurrLine].line;
-
 }
 
 function changeGMeme(text) {
+
     gMeme.txts[gCurrLine].line = text;
     draw();
 }

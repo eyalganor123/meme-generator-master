@@ -1,47 +1,12 @@
-@font-face {
-    font-family: Monestserrat;
-    src: url(Monstserrat-Regular.ttf);
-  }
-/* Base */
-
 * {
-    box-sizing: border-box;
-    outline:0
+    outline: none
 }
-
-html {
-    font-family: play, serif;
-    color: #626262;
-    line-height: 1.5;
-}
-
-body {
-    font-size: 0.875rem;
-    margin: 0;
-}
-
-img {
-    width: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    font-weight: normal;
-}
-
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* flex helpers */
 
 .flex {
-    display: flex;
+    display: flex
 }
 
-.flex.column {
+.column {
     flex-direction: column;
 }
 
@@ -49,92 +14,42 @@ a {
     flex-wrap: wrap;
 }
 
-.space-between {
-    justify-content: space-between;
-}
 .justify-center {
     justify-content: center;
 }
 
-.align-center {
-    align-items: center;
+img {
+    max-width: 230px;
+    min-width: 30px;
+    margin: 5px
 }
 
-/* list helpers */
-
-.clean-list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
-/* Layout */
-img{
-    max-width:250px;
-    margin: 20px;
-}
 .container {
-    max-width:1000px;
+    max-width: 800px;
     margin: 0 auto;
-
-}
-.nav-bar-bg {
-    height: 66px;
-    background-color: #ff7f00;
-    padding:20px;
-
-  }
-  .Gallery {
-    width: 66px;
-    height: 19px;
-    font-family: Montserrat;
-    font-size: 19px;
-    text-align: center;
-    color: #040a2c;}
-.search{
-    height:102px;
-    background-color: #fff;
+    text-align: center
 }
 
-.bio{
-    height:567px;
+button {
+    padding: 10px;
+    width: 140px;
+    font-size: 10px;
+    background-color: rgba(0, 204, 255, 0.541);
 }
-footer{
-    background-color: #ff7f00;
-    height:207px;
-}
-.my-image{
-    width:322px;
-    height:322px;
-    border-radius:50%;
-}
-.title{
-    font-family: Montserrat;
-    font-size: 25px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #000000;}
 
-.gallery{
-    position:fixed;
-    top:0;
-    right: 0;
-    left: 0;
+#text-input {
+    height: 50px;
+    font-size: 20px;
+    width: 100%
 }
-.hide{
- display:none;
+
+.add,
+.remove {
+    padding: 10px;
+    background-color: rgb(82, 197, 243);
+    margin: 10px
 }
-.go-back{
-    width:100px;
-    height:30px;
-    padding:10px;
-    text-align:center;
-    background-color: rgb(185, 185, 224);
-    border-radius:20px
-}
-.logo{
+
+#text-input {
+    width: 200px;
 }

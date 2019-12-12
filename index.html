@@ -12,27 +12,33 @@
 <body onload="init()">
   <!-- editor -->
 
-  <section class="editor flex">
-    <div class="canvas-container">
-      <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+  <section class="editor flex space-between">
+    <nav class="nav-bar-bg"></nav>
+    <div class="canvas-container container flex justify-center">
+      <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
     </div>
-    <div class="options">
-    <input type="text" name="text-input" id="text-input" onkeyup="showText()">
-    <button onclick="onDeleteClick()">delete</button>
-    <button onclick="onFontUp()">font up</button>
-    <button onclick="onFontDown()">font down</button>
-    <button onclick="onMoveUp()">up arrow</button>
-    <button onclick="onMoveDown()">down arrow</button>
-    <button onclick="onSwitchLines()">switch lines</button>
-  </div>
-    <input type="color" name="stroke" id="fill-color" value="#000000" onchange="onUpdateFillColor()">
-    <input type="color" name="fill" id="stroke-color" value="#ffffff" onchange="onUpdateStrokeColor()">
 
-    <a href="#" onclick="downloadImg(this)" download="a.gif">Download Meme</a>
+    <div class="options flex justify-center column container">
+      <input type="text" name="text-input" id="text-input" onkeyup="showText(event)">
+
+      <button onclick="onDeleteClick()">clear</button>
+      <button onclick="onFontUp()">font up</button>
+      <button onclick="onFontDown()">font down</button>
+      <button onclick="onMoveUp()">up arrow</button>
+      <button onclick="onMoveDown()">down arrow</button>
+      <button onclick="onSwitchLines()">switch lines</button>
+
+      <input type="color" name="stroke" id="fill-color" value="#000000" onchange="onUpdateFillColor()">
+      <input type="color" name="fill" id="stroke-color" value="#ffffff" onchange="onUpdateStrokeColor()">
+    </div>
+
     <div class="add" onclick="onAddLine()">+</div>
     <div class="remove" onclick="onRemoveLine()">-</div>
-    <div onclick=onShowGallery() class="go-back">Go Back</div>
-
+    <div class="flex column container space-between">
+      <div onclick=onShowGallery() class="go-back">Go Back</div>
+      <a href="#" onclick="downloadImg(this)" download="a.gif">Download Meme</a>
+    </div>
+    </div>
     <script src="./js/memeService.js"></script>
     <script src="./js/memeController.js"></script>
   </section>
@@ -40,25 +46,15 @@
   <!-- gallery -->
 
   <section class="gallery">
-    <nav class="nav-bar-bg flex space-between">
-
-      <div class="logo" >logo</div>
-
-      <div class="nav-container">
-        <div class="about">About</div>
-      </div>
-    </nav>
-    <!-- <div class="search flex align-center justify-center">search</div> -->
-    <main class="main flex wrap container" id="images">
+    <main class="main flex justify-center wrap container " id="images">
     </main>
-    </div>
-
-    <footer class="flex column align-center justify-center">
-      <div class="logo">logo</div>
-      <div class="right">All rights reserved 2019</div>
-    </footer>
-    <script src="./js/main.js"></script>
   </section>
+
+  <footer class="flex align-center justify-center container">
+
+    <div class="right">All rights reserved 2019</div>
+  </footer>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

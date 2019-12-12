@@ -1,7 +1,8 @@
 'use strict'
+var switchState = false;
 
 function init() {
-    document.querySelector('.editor').style.display="none";
+    document.querySelector('.editor').style.display = "none";
     renderGallery();
     document.querySelector('#text-input').value = gMeme.txts[0].line
 }
@@ -17,8 +18,8 @@ function renderGallery() {
 }
 
 function hideGallery(id) {
-    document.querySelector('.gallery').style.display="none";
-    document.querySelector('.editor').style.display="block";
+    document.querySelector('.gallery').style.display = "none";
+    document.querySelector('.editor').style.display = "block";
 
     updateCanvas(id, event);
 
@@ -31,39 +32,37 @@ function updateCanvas(id) {
 }
 
 function onShowGallery() {
-    document.querySelector('.gallery').style.display="block";
-    document.querySelector('.editor').style.display="none";
-    gMeme.selectedImgId =0;
-    draw(); 
+    document.querySelector('.gallery').style.display = "block";
+    document.querySelector('.editor').style.display = "none";
+    gMeme.selectedImgId = 0;
+    draw();
     document.querySelector('.gallery').classList.remove('hide');
 }
 
-function onDeleteClick(){
-    gMeme.txts=[{
+function onDeleteClick() {
+    gMeme.txts = [{
         line: ' ',
         size: 50,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
-        x:50,
-        y:80
-    },{
+        x: 50,
+        y: 80
+    }, {
         line: '',
         size: 50,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
-        x:50,
-        y:350
-    }]
-;
-    gCurrLine=0;
+        x: 50,
+        y: 350
+    }];
+    gCurrLine = 0;
     draw();
 }
-   
 
 function onFontUp() {
-console.log(gMeme.txts[gCurrLine]);
+    console.log(gMeme.txts[gCurrLine]);
     gMeme.txts[gCurrLine].size += 1;
     draw();
 }
@@ -84,18 +83,21 @@ function onMoveDown() {
 }
 
 function onSwitchLines() {
-gCurrLine++;console.log(gCurrLine);
-
-if (gCurrLine>gMeme.txts.length-1) gCurrLine=0;
-
-draw();
+    gCurrLine++;
+    console.log(gMeme.txts[gCurrLine - 1].y);
+    if (gCurrLine > gMeme.txts.length - 1) gCurrLine = 0;
+ 
+    console.log('on');
+    draw();
 }
-function onUpdateFillColor(){
+
+function onUpdateFillColor() {
     console.log('fill');
     gMeme.txts[gCurrLine].fillcolor = document.querySelector('#fill-color').value;
     draw();
 }
-function onUpdateStrokeColor(){
+
+function onUpdateStrokeColor() {
     console.log(222);
     gMeme.txts[gCurrLine].strokecolor = document.querySelector('#stroke-color').value;
     draw();
@@ -103,29 +105,30 @@ function onUpdateStrokeColor(){
 
 var distance = 50;
 
-function onAddLine(){
+function onAddLine() {
     gCurrLine++;
-   var newLine={
-    line: 'new line',
-    size: 50,
-    direction: 0,
-    fillcolor: "white",
-    strokecolor: "black",
-    x:50,
-    y:gMeme.txts[0].y+distance
-   
-}
-    gMeme.txts.splice(1,0,newLine);
+    var newLine = {
+        line: 'new line',
+        size: 50,
+        direction: 0,
+        fillcolor: "white",
+        strokecolor: "black",
+        x: 50,
+        y: gMeme.txts[0].y + distance
+
+    }
+    gMeme.txts.splice(1, 0, newLine);
     gCurrLine++;
-   
+
     draw();
-    distance+=50;
+    distance += 50;
 
 }
-function onRemoveLine(){
-    if(gMeme.txts.length<=1)return
+
+function onRemoveLine() {
+    if (gMeme.txts.length <= 1) return
     gCurrLine--;
-  gMeme.txts.splice(gCurrLine,1);
-//   gCurrLine=0;
-  draw();
+    gMeme.txts.splice(gCurrLine, 1);
+    //   gCurrLine=0;
+    draw();
 }
