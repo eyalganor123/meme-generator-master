@@ -43,17 +43,21 @@ var gMeme = {
     selectedImgId: 1,
     selectedTxtIdx: 0,
     txts: [{
-        line: 'I love Falafel',
+        line: '',
         size: 50,
         direction: 0,
         fillcolor: "white",
-        strokecolor: "black"
+        strokecolor: "black",
+        x:50,
+        y:80
     }, {
-        line: 'but not today',
-        size: 60,
+        line: '',
+        size: 50,
         direction: 0,
         fillcolor: "white",
-        strokecolor: "black"
+        strokecolor: "black",
+        x:50,
+        y:350
     }],
 }
 
@@ -66,23 +70,18 @@ function draw() {
     gImg.onload = () => {
         gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height)
     };
-    size1 = (gMeme.txts[0].size);
-    size2 = (gMeme.txts[1].size);
-
-    // gCtx.strokeStyle = gMeme.txts[0].strokecolor;
     gCtx.lineWidth = 6;
-    gCtx.font = `${size1}px Impact`;
-    gCtx.strokeStyle = gMeme.txts[0].strokecolor;
-    gCtx.strokeText(gMeme.txts[0].line, 50, 80 + gMeme.txts[0].direction);
-
-    gCtx.fillStyle = gMeme.txts[0].fillcolor;
-    gCtx.fillText(gMeme.txts[0].line, 50, 80 + gMeme.txts[0].direction);
+  
+    gMeme.txts.forEach(function(object){
+        gCtx.font = `${object.size}px Impact`;
+        gCtx.strokeStyle = object.strokecolor;
+        gCtx.strokeText(object.line, object.x, object.y + object.direction);
     
-    gCtx.strokeStyle = gMeme.txts[1].strokecolor;
-    gCtx.font = `${size2}px Impact`;
-    gCtx.strokeText(gMeme.txts[1].line, 50, 350 + gMeme.txts[1].direction);
-    gCtx.fillStyle = gMeme.txts[1].fillcolor;
-    gCtx.fillText(gMeme.txts[1].line, 50, 350 + gMeme.txts[1].direction);
+        gCtx.fillStyle = object.fillcolor;
+        gCtx.fillText(object.line, object.x, object.y + object.direction);
+    });
+    document.querySelector('#text-input').value = gMeme.txts[gCurrLine].line;
+
 }
 
 function changeGMeme(text) {
@@ -90,5 +89,11 @@ function changeGMeme(text) {
     draw();
 }
 
+function downloadImg(elLink) {
+    const data = gCanvas.toDataURL()
+    elLink.href = data
+    console.log(data);
+    elLink.download = 'my-img.gif'
+}
 
 draw();

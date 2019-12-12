@@ -12,49 +12,47 @@
 <body onload="init()">
   <!-- editor -->
 
-  <section class="editor">
-    <img src="./img/003.jpg" alt="" width=500 height=500 hidden>
-    <img src="./img/005.jpg" alt="" width=500 height=500 hidden>
-    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
-
+  <section class="editor flex">
+    <div class="canvas-container">
+      <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+    </div>
+    <div class="options">
     <input type="text" name="text-input" id="text-input" onkeyup="showText()">
+    <button onclick="onDeleteClick()">delete</button>
     <button onclick="onFontUp()">font up</button>
     <button onclick="onFontDown()">font down</button>
     <button onclick="onMoveUp()">up arrow</button>
     <button onclick="onMoveDown()">down arrow</button>
     <button onclick="onSwitchLines()">switch lines</button>
+  </div>
     <input type="color" name="stroke" id="fill-color" value="#000000" onchange="onUpdateFillColor()">
     <input type="color" name="fill" id="stroke-color" value="#ffffff" onchange="onUpdateStrokeColor()">
- 
-    <div onclick=showGallery() class="go-back">Go Back</div>
+
+    <a href="#" onclick="downloadImg(this)" download="a.gif">Download Meme</a>
+    <div class="add" onclick="onAddLine()">+</div>
+    <div class="remove" onclick="onRemoveLine()">-</div>
+    <div onclick=onShowGallery() class="go-back">Go Back</div>
+
     <script src="./js/memeService.js"></script>
     <script src="./js/memeController.js"></script>
   </section>
 
-<!-- gallery -->
+  <!-- gallery -->
 
   <section class="gallery">
-    <nav class="nav-bar-bg flex align-center space-between">
-      <div class="logo">logo</div>
-      <div class="nav-container flex">
-        <div class="gallery">Gallery</div>
+    <nav class="nav-bar-bg flex space-between">
 
+      <div class="logo" >logo</div>
+
+      <div class="nav-container">
         <div class="about">About</div>
       </div>
     </nav>
-    <div class="search flex align-center justify-center">search</div>
-    <main class="main grid" id="images">
-
+    <!-- <div class="search flex align-center justify-center">search</div> -->
+    <main class="main flex wrap container" id="images">
     </main>
-    <div class="bio flex justify-center align-center">
-      <img class="my-image" src="./img/003.jpg" alt="">
-      <div class="title flex column">Donald j. Trump
-        <div class="text">sdfsdfsdfsdfsdf</div>
-      </div>
-
-
-
     </div>
+
     <footer class="flex column align-center justify-center">
       <div class="logo">logo</div>
       <div class="right">All rights reserved 2019</div>

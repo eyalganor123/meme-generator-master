@@ -1,5 +1,5 @@
 @font-face {
-    font-family: Monest;
+    font-family: Monestserrat;
     src: url(Monstserrat-Regular.ttf);
   }
 /* Base */
@@ -59,13 +59,7 @@ a {
 .align-center {
     align-items: center;
 }
-.grid{
-    display:grid;
-    grid-template-columns:repeat(3,300px);
-    grid-template-rows:repeat(3,300px);
-    grid-gap:10px;
-    overflow: scroll;   
-}
+
 /* list helpers */
 
 .clean-list {
@@ -75,8 +69,12 @@ a {
 }
 
 /* Layout */
-
+img{
+    max-width:250px;
+    margin: 20px;
+}
 .container {
+    max-width:1000px;
     margin: 0 auto;
 
 }
@@ -91,17 +89,13 @@ a {
     height: 19px;
     font-family: Montserrat;
     font-size: 19px;
-
     text-align: center;
     color: #040a2c;}
 .search{
     height:102px;
     background-color: #fff;
 }
-.main{
-    height:932px;
-    background-color: lightgray;
-}
+
 .bio{
     height:567px;
 }
@@ -141,4 +135,6 @@ footer{
     text-align:center;
     background-color: rgb(185, 185, 224);
     border-radius:20px
+}
+.logo{
 }
