@@ -1,7 +1,8 @@
 *{
     outline: none;
     text-align: center;
-    margin:0;
+    margin:0 auto;
+    background-color: lightgray;;
 }
 
 .flex {
@@ -12,13 +13,14 @@
     flex-direction: column;
 }
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 300px;
+    margin:0 10;
     text-align: center
 }
 button{
     width: 100px;
     align-self: center;
+    background-color: lightblue;
 }
 #text-input {
     height: 50px;
@@ -27,6 +29,11 @@ button{
 }
 img{
     width:200px
+}
+nav{
+    height:50px;
+    background-color: orange;
+    margin-bottom:30px;
 }
 
 /*

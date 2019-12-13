@@ -63,7 +63,6 @@ var gMeme = {
 
 
 function changeGMeme(text) {
-
     gMeme.txts[gCurrLine].line = text;
     draw();
 }
@@ -71,6 +70,5 @@ function changeGMeme(text) {
 function downloadImg(elLink) {
     const data = gCanvas.toDataURL()
     elLink.href = data
-    console.log(data);
     elLink.download = 'my-img.gif'
 }

@@ -61,7 +61,7 @@ function onShowGallery() {
 function onDeleteClick() {
     gMeme.txts = [{
         line: ' ',
-        size: 50,
+        size: 20,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
@@ -69,19 +69,18 @@ function onDeleteClick() {
         y: 80
     }, {
         line: '',
-        size: 50,
+        size: 20,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
         x: 50,
-        y: 350
+        y: 250
     }];
     gCurrLine = 0;
     draw();
 }
 
 function onFontUp() {
-    console.log(gMeme.txts[gCurrLine]);
     gMeme.txts[gCurrLine].size += 1;
     draw();
 }
@@ -111,6 +110,7 @@ function onSwitchLines() {
     gCtx.moveTo(0, gMeme.txts[gCurrLine ].y+ gMeme.txts[gCurrLine].direction+10);
     gCtx.lineTo(1000,gMeme.txts[gCurrLine ].y+ gMeme.txts[gCurrLine].direction+10);
     gCtx.stroke();
+    document.querySelector('#text-input').value = gMeme.txts[gCurrLine].line;
     setTimeout(function(){
         draw(); }, 3000);
 
@@ -134,7 +134,7 @@ function onAddLine() {
     gCurrLine++;
     var newLine = {
         line: 'new line',
-        size: 50,
+        size: 20,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
