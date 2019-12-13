@@ -1,5 +1,7 @@
-* {
-    outline: none
+*{
+    outline: none;
+    text-align: center;
+    margin:0;
 }
 
 .flex {
@@ -9,7 +11,25 @@
 .column {
     flex-direction: column;
 }
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center
+}
+button{
+    width: 100px;
+    align-self: center;
+}
+#text-input {
+    height: 50px;
+    font-size: 20px;
+    width: 100%
+}
+img{
+    width:200px
+}
 
+/*
 .flex.wrap {
     flex-wrap: wrap;
 }
@@ -27,11 +47,7 @@ img {
     margin: 5px
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center
-}
+
 
 button {
     padding: 10px;
@@ -40,11 +56,7 @@ button {
     background-color: rgba(0, 204, 255, 0.541);
 }
 
-#text-input {
-    height: 50px;
-    font-size: 20px;
-    width: 100%
-}
+
 
 .add,
 .remove {
@@ -67,4 +79,4 @@ canvas{
     width:400px
 }
 
-
+ */

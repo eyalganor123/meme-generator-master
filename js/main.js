@@ -1,12 +1,11 @@
 'use strict'
-var switchState = false;
 
 function init() {
     document.querySelector('.editor').style.display = "none";
     renderGallery();
-    document.querySelector('#text-input').value = gMeme.txts[0].line
+    document.querySelector('#text-input').value = gMeme.txts[0].line;
+ 
 }
-
 
 function renderGallery() {
     var elImages = document.querySelector('#images');
@@ -23,6 +22,26 @@ function hideGallery(id) {
 
     updateCanvas(id, event);
 
+}
+function draw() {
+    let img = document.querySelector('img');
+    img.src = gImgs[gMeme.selectedImgId].url;
+
+    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
+
+    gMeme.txts.forEach(function (object) {
+        gCtx.lineWidth = 4;
+        gCtx.font = `${object.size}px Impact`;
+        gCtx.strokeStyle = object.strokecolor;
+        gCtx.strokeText(object.line, object.x, object.y + object.direction);
+
+        gCtx.fillStyle = object.fillcolor;
+        gCtx.fillText(object.line, object.x, object.y + object.direction);
+    
+
+    });
+
+    document.querySelector('#text-input').value = gMeme.txts[gCurrLine].line;
 }
 
 function updateCanvas(id) {
@@ -84,11 +103,17 @@ function onMoveDown() {
 
 function onSwitchLines() {
     gCurrLine++;
-    console.log(gMeme.txts[gCurrLine - 1].y);
+    console.log(gMeme.txts[gCurrLine - 1].y);console.log(gCurrLine-1);
     if (gCurrLine > gMeme.txts.length - 1) gCurrLine = 0;
- 
-    console.log('on');
-    draw();
+    gCtx.lineWidth = 3;
+    gCtx.strokeStyle = "red";
+    gCtx.beginPath();
+    gCtx.moveTo(0, gMeme.txts[gCurrLine ].y+ gMeme.txts[gCurrLine].direction+10);
+    gCtx.lineTo(1000,gMeme.txts[gCurrLine ].y+ gMeme.txts[gCurrLine].direction+10);
+    gCtx.stroke();
+    setTimeout(function(){
+        draw(); }, 3000);
+
 }
 
 function onUpdateFillColor() {
@@ -127,8 +152,16 @@ function onAddLine() {
 
 function onRemoveLine() {
     if (gMeme.txts.length <= 1) return
-    gCurrLine--;
+    // gCurrLine--;
     gMeme.txts.splice(gCurrLine, 1);
-    //   gCurrLine=0;
+      gCurrLine=0;  
     draw();
 }
+function showLocation(event){
+    console.log(event.layerX);
+}
+function showText(event){
+    var elTextInput=document.querySelector('#text-input');
+    var text = elTextInput.value;
+    changeGMeme(text);
+    }

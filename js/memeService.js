@@ -40,11 +40,11 @@ var gImgs = [{
     keywords: ['angry']
 }];
 var gMeme = {
-    selectedImgId: 1,
+    selectedImgId: 0,
     selectedTxtIdx: 0,
     txts: [{
         line: '',
-        size: 50,
+        size: 20,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
@@ -52,39 +52,15 @@ var gMeme = {
         y: 80
     }, {
         line: '',
-        size: 50,
+        size: 20,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
         x: 50,
-        y: 350
+        y: 250
     }],
 }
 
-function draw() {
-    const img = document.querySelector('img');
-    img.src = gImgs[gMeme.selectedImgId].url;
-
-    gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
-    gImg = new Image();
-    gImg.onload = () => {
-        gCtx.drawImage(gImg, 0, 0, gCanvas.width, gCanvas.height)
-    };
-
-    gCtx.lineWidth = 6;
-
-    gMeme.txts.forEach(function (object) {
-        gCtx.font = `${object.size}px Impact`;
-        gCtx.strokeStyle = object.strokecolor;
-        gCtx.strokeText(object.line, object.x, object.y + object.direction);
-
-        gCtx.fillStyle = object.fillcolor;
-        gCtx.fillText(object.line, object.x, object.y + object.direction);
-
-
-    });
-    document.querySelector('#text-input').value = gMeme.txts[gCurrLine].line;
-}
 
 function changeGMeme(text) {
 
@@ -98,5 +74,3 @@ function downloadImg(elLink) {
     console.log(data);
     elLink.download = 'my-img.gif'
 }
-
-draw();

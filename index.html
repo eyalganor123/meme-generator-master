@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="./img/favicon.ico"/>
+
   <link rel="stylesheet" href="./css/style.css">
   <title>Meme Generator</title>
 </head>
@@ -12,30 +14,32 @@
 <body onload="init()">
   <!-- editor -->
 
-  <section class="editor flex space-between">
+  <section class="editor flex column space-between">
     <nav class="nav-bar-bg"></nav>
 
-    <div class="canvas-container container flex justify-center">
-      <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
-      <div class="options flex justify-center align-center column container">
-          <input type="text" name="text-input" id="text-input" onkeyup="showText(event)">
-    
-          <button onclick="onDeleteClick()">clear</button>
-          <button onclick="onFontUp()">font up</button>
-          <button onclick="onFontDown()">font down</button>
-          <button onclick="onMoveUp()">up arrow</button>
-          <button onclick="onMoveDown()">down arrow</button>
-          <button onclick="onSwitchLines()">switch lines</button>
-    
-          <input type="color" name="stroke" id="fill-color" value="#000000" onchange="onUpdateFillColor()">
-          <input type="color" name="fill" id="stroke-color" value="#ffffff" onchange="onUpdateStrokeColor()">
-          <div class="add" onclick="onAddLine()">+</div>
-          <div class="remove" onclick="onRemoveLine()">-</div>
-        </div>
+    <div class="canvas-container container">
+
+      <canvas onclick="showLocation(event)" id="myCanvas" width="350" height="350"
+        style="border:1px solid #000000;"></canvas>
+      <div class="flex column">
+        <input type="text" name="text-input" id="text-input" onkeyup="showText(event)">
+
+        <button onclick="onDeleteClick()">clear</button>
+        <button onclick="onFontUp()">font up</button>
+        <button onclick="onFontDown()">font down</button>
+        <button onclick="onMoveUp()">up arrow</button>
+        <button onclick="onMoveDown()">down arrow</button>
+        <button onclick="onSwitchLines()">switch lines</button>
+        <button>
+          <input type="color" name="stroke" id="fill-color" value="#000000" onchange="onUpdateFillColor()"></button>
+        <button> <input type="color" name="fill" id="stroke-color" value="#ffffff"
+            onchange="onUpdateStrokeColor()"></button>
+        <!-- <div class="add" onclick="onAddLine()">+</div>
+          <div class="remove" onclick="onRemoveLine()">-</div> -->
+
+      </div>
+
     </div>
-
-  
-
 
     <div class="flex column container space-between">
       <div onclick=onShowGallery() class="go-back">Go Back</div>
@@ -49,11 +53,11 @@
 
   <section class="gallery">
     <nav class="nav-container"></nav>
-    <main class="main flex justify-center wrap container " id="images">
+    <main class="main justify-center wrap container " id="images">
     </main>
   </section>
 
-  <footer class="flex  justify-center">
+  <footer class=" justify-center container">
 
     <div class="right">All rights reserved 2019</div>
   </footer>
