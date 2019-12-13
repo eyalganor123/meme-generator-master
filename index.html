@@ -13,8 +13,8 @@
 
 <body onload="init()">
   <!-- editor -->
-
   <section class="editor flex column space-between">
+
     <nav class="nav-bar-bg">nav</nav>
 
     <div class="canvas-container container">
@@ -22,25 +22,26 @@
       <canvas onclick="showLocation(event)" id="myCanvas" width="300" height="300"
         style="border:1px solid #000000;"></canvas>
       <div class="flex column">
+       
         <input type="text" name="text-input" id="text-input" onkeyup="showText(event)">
-
-        <button onclick="onDeleteClick()">clear</button>
-        <button onclick="onFontUp()">font up</button>
-        <button onclick="onFontDown()">font down</button>
-        <button onclick="onMoveUp()">up arrow</button>
-        <button onclick="onMoveDown()">down arrow</button>
-        <button onclick="onSwitchLines()">switch lines</button>
+        <button onclick="onDeleteClick()"> <img src="./img/icons/trash.png" width="20" alt=""> </button>
+        <button onclick="onFontUp()"><img src="./img/icons/fontUp.png" width="20" alt=""></button>
+        <button onclick="onFontDown()"><img src="./img/icons/fontDown.png" width="20" alt=""></button>
+        <button onclick="onMoveUp()"><img src="./img/icons/upArrow.png" width="20" alt=""></button>
+        <button onclick="onMoveDown()"><img src="./img/icons/downArrow.png" width="14" alt=""></button>
+        <button onclick="onSwitchLines()"><img src="./img/icons/onSwitchLines.png" width="20" alt=""></button>
         <button>
           <input type="color" name="stroke" id="fill-color" value="#000000" onchange="onUpdateFillColor()"></button>
         <button> <input type="color" name="fill" id="stroke-color" value="#ffffff"
             onchange="onUpdateStrokeColor()"></button>
+    
+
         <!-- <div class="add" onclick="onAddLine()">+</div>
           <div class="remove" onclick="onRemoveLine()">-</div> -->
 
       </div>
 
     </div>
-
     <div class="flex column container space-between">
       <div onclick=onShowGallery() class="go-back">Go Back</div>
       <a href="#" onclick="downloadImg(this)" download="a.gif">Download Meme</a>
@@ -62,8 +63,7 @@
     <div class="right">All rights reserved 2019</div>
   </footer>
   <script src="./js/memeService.js"></script>
-  <script src="./js/memeController.js"></script>
-  <script src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

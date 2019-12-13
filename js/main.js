@@ -11,7 +11,7 @@ function renderGallery() {
     var elImages = document.querySelector('#images');
     var imgs = gImgs;
     var strImgs = imgs.map(function (img, position) {
-        return `<img src="${img.url}" alt="" onclick="hideGallery(${position})">`;
+        return `<img class="image" src="${img.url}" alt="" onclick="hideGallery(${position})">`;
     })
     elImages.innerHTML = strImgs.join('');
 }
@@ -25,7 +25,7 @@ function hideGallery(id) {
 
 }
 function draw() {
-    let img = document.querySelector('img');
+    let img = document.querySelector('.image');
     img.src = gImgs[gMeme.selectedImgId].url;
 
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
@@ -78,7 +78,10 @@ function onDeleteClick() {
         y: 250
     }];
     gCurrLine = 0;
+    
+
     draw();
+    
 }
 
 function onFontUp() {

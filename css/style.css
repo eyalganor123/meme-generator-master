@@ -20,14 +20,15 @@
 button{
     width: 100px;
     align-self: center;
-    background-color: lightblue;
+  
+    /* display:none */
 }
 #text-input {
     height: 50px;
     font-size: 20px;
     width: 72%
 }
-img{
+.image{
     width:300px
 }
 nav{
