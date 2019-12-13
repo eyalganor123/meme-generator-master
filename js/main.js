@@ -19,6 +19,7 @@ function renderGallery() {
 function hideGallery(id) {
     document.querySelector('.gallery').style.display = "none";
     document.querySelector('.editor').style.display = "block";
+    document.querySelector('#text-input').autofocus=true;
 
     updateCanvas(id, event);
 
@@ -111,6 +112,7 @@ function onSwitchLines() {
     gCtx.lineTo(1000,gMeme.txts[gCurrLine ].y+ gMeme.txts[gCurrLine].direction+10);
     gCtx.stroke();
     document.querySelector('#text-input').value = gMeme.txts[gCurrLine].line;
+
     setTimeout(function(){
         draw(); }, 3000);
 

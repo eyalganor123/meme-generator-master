@@ -4,7 +4,7 @@ let gCurrLine = 0;
 
 var gImgs = [{
     id: 0,
-    url: './img/003.jpg',
+    url: './img/8.jpg',
     keywords: ['happy']
 }, {
     id: 1,
@@ -16,7 +16,7 @@ var gImgs = [{
     keywords: ['angry']
 }, {
     id: 3,
-    url: './img/8.jpg',
+    url: './img/5.jpg',
     keywords: ['angry']
 }, {
     id: 4,
