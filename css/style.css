@@ -3,62 +3,63 @@
         text-align: center;
         margin: 0 auto;
     }
-    
+
     body {
         background-color: lightgray;
     }
-    
+
     .flex {
         display: flex
     }
-    
+
     .space-around {
         justify-content: space-around
     }
-    
+
     .flex.justify-center {
         justify-content: center;
     }
-    
+
     .flex.align-center {
         align-items: center;
     }
-    
+
     .column {
         flex-direction: column;
     }
-    
+
     .container {
         max-width: 700px;
         margin: 0 auto;
         text-align: center
     }
-    
+
     #text-input {
         height: 30px;
         font-size: 20px;
         margin-bottom: 10px;
-        width:295px;
+        width: 295px;
     }
-    span{
+
+    span {
         width: 400px;
     }
 
-    
+
     nav {
         height: 20px;
         background-color: orange;
         margin-bottom: 10px;
     }
-    
+
     button {
         padding: 20px;
     }
-    
+
     .logo {
         background-color: transparent;
     }
-    
+
     footer {
         position: fixed;
         background-color: orange;
@@ -66,61 +67,67 @@
         width: 100%;
         bottom: 0;
     }
-    
+
     .options {
         margin-bottom: 30px;
     }
-    
+
     .go-back,
     .download {
         width: 100px;
         background-color: lightblue;
         padding: 2px;
         border: 1px solid black;
-        border-radius: 10px;margin-bottom:5px
+        border-radius: 10px;
+        margin-bottom: 5px
     }
-    
+
     .go-back:hover,
     .download:hover {
         background-color: rgb(177, 228, 245);
     }
-    
+
     a {
         text-decoration: none;
         color: black
     }
-    
+
     @media screen and (max-width: 600px) {
         #myCanvas {
             width: 300px;
             height: 300px;
             margin-bottom: 20px;
         }
+
         .image {
             width: 300px;
         }
+
         button {
             padding: 10px;
         }
+
         .grid {
             display: grid;
             grid-template-columns: 300px;
             grid-gap: 10px;
         }
     }
-    
+
     @media screen and (min-width: 601px) {
         #myCanvas {
             width: 300px;
-            height:300px;
+            height: 300px;
             margin-bottom: 10px;
         }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 150px);
             grid-gap: 5px;
         }
+
         .image {
-            width: 150px
+            width: 150px;
         }
     }

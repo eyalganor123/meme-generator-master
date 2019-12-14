@@ -160,7 +160,6 @@ function onAddLine() {
 
 function onRemoveLine() {
     if (gMeme.txts.length <= 1) return
-        // gCurrLine--;
     gMeme.txts.splice(gCurrLine, 1);
     gCurrLine = 0;
     draw();
