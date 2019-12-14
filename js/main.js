@@ -4,13 +4,13 @@ function init() {
     document.querySelector('.editor').style.display = "none";
     renderGallery();
     document.querySelector('#text-input').value = gMeme.txts[0].line;
- 
+
 }
 
 function renderGallery() {
     var elImages = document.querySelector('#images');
     var imgs = gImgs;
-    var strImgs = imgs.map(function (img, position) {
+    var strImgs = imgs.map(function(img, position) {
         return `<img class="image" src="${img.url}" alt="" onclick="hideGallery(${position})">`;
     })
     elImages.innerHTML = strImgs.join('');
@@ -19,26 +19,27 @@ function renderGallery() {
 function hideGallery(id) {
     document.querySelector('.gallery').style.display = "none";
     document.querySelector('.editor').style.display = "block";
-    document.querySelector('#text-input').autofocus=true;
+    document.querySelector('#text-input').autofocus = true;
 
     updateCanvas(id, event);
 
 }
+
 function draw() {
     let img = document.querySelector('.image');
     img.src = gImgs[gMeme.selectedImgId].url;
 
     gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height)
 
-    gMeme.txts.forEach(function (object) {
-        gCtx.lineWidth = 4;
+    gMeme.txts.forEach(function(object) {
+        gCtx.lineWidth = 3;
         gCtx.font = `${object.size}px Impact`;
         gCtx.strokeStyle = object.strokecolor;
         gCtx.strokeText(object.line, object.x, object.y + object.direction);
 
         gCtx.fillStyle = object.fillcolor;
         gCtx.fillText(object.line, object.x, object.y + object.direction);
-    
+
 
     });
 
@@ -62,7 +63,7 @@ function onShowGallery() {
 function onDeleteClick() {
     gMeme.txts = [{
         line: ' ',
-        size: 20,
+        size: 50,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
@@ -70,18 +71,18 @@ function onDeleteClick() {
         y: 80
     }, {
         line: '',
-        size: 20,
+        size: 50,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
         x: 50,
-        y: 250
+        y: 350
     }];
     gCurrLine = 0;
-    
+
 
     draw();
-    
+
 }
 
 function onFontUp() {
@@ -106,18 +107,20 @@ function onMoveDown() {
 
 function onSwitchLines() {
     gCurrLine++;
-    console.log(gMeme.txts[gCurrLine - 1].y);console.log(gCurrLine-1);
+    console.log(gMeme.txts[gCurrLine - 1].y);
+    console.log(gCurrLine - 1);
     if (gCurrLine > gMeme.txts.length - 1) gCurrLine = 0;
     gCtx.lineWidth = 3;
     gCtx.strokeStyle = "red";
     gCtx.beginPath();
-    gCtx.moveTo(0, gMeme.txts[gCurrLine ].y+ gMeme.txts[gCurrLine].direction+10);
-    gCtx.lineTo(1000,gMeme.txts[gCurrLine ].y+ gMeme.txts[gCurrLine].direction+10);
+    gCtx.moveTo(0, gMeme.txts[gCurrLine].y + gMeme.txts[gCurrLine].direction + 10);
+    gCtx.lineTo(1000, gMeme.txts[gCurrLine].y + gMeme.txts[gCurrLine].direction + 10);
     gCtx.stroke();
     document.querySelector('#text-input').value = gMeme.txts[gCurrLine].line;
 
-    setTimeout(function(){
-        draw(); }, 3000);
+    setTimeout(function() {
+        draw();
+    }, 3000);
 
 }
 
@@ -157,16 +160,18 @@ function onAddLine() {
 
 function onRemoveLine() {
     if (gMeme.txts.length <= 1) return
-    // gCurrLine--;
+        // gCurrLine--;
     gMeme.txts.splice(gCurrLine, 1);
-      gCurrLine=0;  
+    gCurrLine = 0;
     draw();
 }
-function showLocation(event){
+
+function showLocation(event) {
     console.log(event.layerX);
 }
-function showText(event){
-    var elTextInput=document.querySelector('#text-input');
+
+function showText(event) {
+    var elTextInput = document.querySelector('#text-input');
     var text = elTextInput.value;
     changeGMeme(text);
-    }
+}

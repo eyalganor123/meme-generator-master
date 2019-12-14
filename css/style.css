@@ -1,90 +1,126 @@
-*{
-    outline: none;
-    text-align: center;
-    margin:0 auto;
-    background-color: lightgray;;
-}
-
-.flex {
-    display: flex
-}
-
-.column {
-    flex-direction: column;
-}
-.container {
-    max-width: 300px;
-    margin:0 10;
-    text-align: center
-}
-button{
-    width: 100px;
-    align-self: center;
-  
-    /* display:none */
-}
-#text-input {
-    height: 50px;
-    font-size: 20px;
-    width: 72%
-}
-.image{
-    width:300px
-}
-nav{
-    height:50px;
-    background-color: orange;
-    margin-bottom:30px;
-}
-
-/*
-.flex.wrap {
-    flex-wrap: wrap;
-}
-
-.justify-center {
-    justify-content: center;
-}
-.align-center{
-    align-items:center;
-}
-
-img {
-    max-width: 230px;
-    min-width: 30px;
-    margin: 5px
-}
-
-
-
-button {
-    padding: 10px;
-    width: 140px;
-    font-size: 10px;
-    background-color: rgba(0, 204, 255, 0.541);
-}
-
-
-
-.add,
-.remove {
-    padding: 10px;
-    background-color: rgb(82, 197, 243);
-    margin: 10px;
-    width:100px;
-}
-.nav-container{
- 
-    height: 66px;
-    background-color: #ff7f00;
-}
-footer {
+    * {
+        outline: none;
+        text-align: center;
+        margin: 0 auto;
+    }
     
-    height: 107px;
-    background-color: #ff7f00;
-}
-canvas{
-    width:400px
-}
+    body {
+        background-color: lightgray;
+    }
+    
+    .flex {
+        display: flex
+    }
+    
+    .space-around {
+        justify-content: space-around
+    }
+    
+    .flex.justify-center {
+        justify-content: center;
+    }
+    
+    .flex.align-center {
+        align-items: center;
+    }
+    
+    .column {
+        flex-direction: column;
+    }
+    
+    .container {
+        max-width: 700px;
+        margin: 0 auto;
+        text-align: center
+    }
+    
+    #text-input {
+        height: 30px;
+        font-size: 20px;
+        margin-bottom: 10px;
+        width:295px;
+    }
+    span{
+        width: 400px;
+    }
 
- */
+    
+    nav {
+        height: 20px;
+        background-color: orange;
+        margin-bottom: 10px;
+    }
+    
+    button {
+        padding: 20px;
+    }
+    
+    .logo {
+        background-color: transparent;
+    }
+    
+    footer {
+        position: fixed;
+        background-color: orange;
+        height: 50px;
+        width: 100%;
+        bottom: 0;
+    }
+    
+    .options {
+        margin-bottom: 30px;
+    }
+    
+    .go-back,
+    .download {
+        width: 100px;
+        background-color: lightblue;
+        padding: 2px;
+        border: 1px solid black;
+        border-radius: 10px;margin-bottom:5px
+    }
+    
+    .go-back:hover,
+    .download:hover {
+        background-color: rgb(177, 228, 245);
+    }
+    
+    a {
+        text-decoration: none;
+        color: black
+    }
+    
+    @media screen and (max-width: 600px) {
+        #myCanvas {
+            width: 300px;
+            height: 300px;
+            margin-bottom: 20px;
+        }
+        .image {
+            width: 300px;
+        }
+        button {
+            padding: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 300px;
+            grid-gap: 10px;
+        }
+    }
+    
+    @media screen and (min-width: 601px) {
+        #myCanvas {
+            width: 300px;
+            height:300px;
+            margin-bottom: 10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 150px);
+            grid-gap: 5px;
+        }
+        .image {
+            width: 150px
+        }
+    }

@@ -44,7 +44,7 @@ var gMeme = {
     selectedTxtIdx: 0,
     txts: [{
         line: '',
-        size: 20,
+        size: 50,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
@@ -52,12 +52,12 @@ var gMeme = {
         y: 80
     }, {
         line: '',
-        size: 20,
+        size: 50,
         direction: 0,
         fillcolor: "white",
         strokecolor: "black",
         x: 50,
-        y: 250
+        y: 350
     }],
 }
 

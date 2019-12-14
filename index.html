@@ -2,67 +2,69 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" type="image/png" href="./img/favicon.ico"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
 
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Meme Generator</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Meme Generator</title>
 </head>
 
 <body onload="init()">
-  <!-- editor -->
-  <section class="editor flex column space-between">
+    <!-- editor -->
+    <section class="editor flex column space-between">
 
-    <nav class="nav-bar-bg">nav</nav>
+        <nav class="nav-bar-bg"> </nav>
 
-    <div class="canvas-container container">
+        <div class="canvas-container container">
+          <span class="flex justify-center  ">
+            <div onclick=onShowGallery() class="go-back">Go Back</div>
+            <a class="download" href="#" onclick="downloadImg(this)" download="a.gif">Download</a>
+          </span>
+            <canvas onclick="showLocation(event)" id="myCanvas" width="502" height="502"></canvas>
+            <div class="flex column">
 
-      <canvas onclick="showLocation(event)" id="myCanvas" width="300" height="300"
-        style="border:1px solid #000000;"></canvas>
-      <div class="flex column">
-       
-        <input type="text" name="text-input" id="text-input" onkeyup="showText(event)">
-        <button onclick="onDeleteClick()"> <img src="./img/icons/trash.png" width="20" alt=""> </button>
-        <button onclick="onFontUp()"><img src="./img/icons/fontUp.png" width="20" alt=""></button>
-        <button onclick="onFontDown()"><img src="./img/icons/fontDown.png" width="20" alt=""></button>
-        <button onclick="onMoveUp()"><img src="./img/icons/upArrow.png" width="20" alt=""></button>
-        <button onclick="onMoveDown()"><img src="./img/icons/downArrow.png" width="14" alt=""></button>
-        <button onclick="onSwitchLines()"><img src="./img/icons/onSwitchLines.png" width="20" alt=""></button>
-        <button>
-          <input type="color" name="stroke" id="fill-color" value="#000000" onchange="onUpdateFillColor()"></button>
-        <button> <input type="color" name="fill" id="stroke-color" value="#ffffff"
+                <input type="text" name="text-input" id="text-input" onkeyup="showText(event)">
+                <section class="options flex">
+                    <button onclick="onDeleteClick()"> <img src="./img/icons/trash.png" width="20" alt=""> </button>
+                    <button onclick="onFontUp()"><img src="./img/icons/fontUp.png" width="20" alt=""></button>
+                    <button onclick="onFontDown()"><img src="./img/icons/fontDown.png" width="20" alt=""></button>
+                    <button onclick="onMoveUp()"><img src="./img/icons/upArrow.png" width="14" alt=""></button>
+                    <button onclick="onMoveDown()"><img src="./img/icons/downArrow.png" width="14" alt=""></button>
+                    <button onclick="onSwitchLines()"><img src="./img/icons/onSwitchLines.png" width="20" alt=""></button>
+                    <button><input type="color" name="stroke" id="fill-color" value="#ffffff" onchange="onUpdateFillColor()"></button>
+                    <button> <input type="color" name="fill" id="stroke-color" value="#000000"
             onchange="onUpdateStrokeColor()"></button>
-    
+                </section>
 
-        <!-- <div class="add" onclick="onAddLine()">+</div>
+
+                <!-- <div class="add" onclick="onAddLine()">+</div>
           <div class="remove" onclick="onRemoveLine()">-</div> -->
 
-      </div>
+            </div>
 
-    </div>
-    <div class="flex column container space-between">
-      <div onclick=onShowGallery() class="go-back">Go Back</div>
-      <a href="#" onclick="downloadImg(this)" download="a.gif">Download Meme</a>
-    </div>
-    </div>
+        </div>
+      
+        </div>
 
-  </section>
+    </section>
 
-  <!-- gallery -->
+    <!-- gallery -->
 
-  <section class="gallery">
-    <nav class="nav-container"></nav>
-    <main class="main justify-center wrap container " id="images">
-    </main>
-  </section>
+    <section class="gallery">
+        <nav class="nav-container flex ">
+        </nav>
+        <div class="img-container container flex justify-center">
+            <main class="main  grid container" id="images"></main>
+        </div>
+    </section>
 
-  <footer class=" justify-center container">
+    <footer class="flex align-center ">
 
-    <div class="right">All rights reserved 2019</div>
-  </footer>
-  <script src="./js/memeService.js"></script>
+        <div class="right">All rights reserved 2019</div>
+    </footer>
+    <script src="./js/memeService.js"></script>
     <script src="./js/main.js"></script>
 </body>
 
