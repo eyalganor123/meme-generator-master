@@ -114,7 +114,7 @@
             border:1px solid black;
         }
         #text-input{
-            margin-bottom:50px;
+            margin-bottom:20px;
             height:80px;
             font-size:30px;
         }
@@ -139,8 +139,7 @@
             grid-template-columns: repeat(3, 150px);
             grid-gap: 5px;
         }
-
         .image {
-            width: 160px;
+            width: 150px;
         }
     }
