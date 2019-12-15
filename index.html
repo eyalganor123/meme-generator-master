@@ -15,24 +15,25 @@
   <!-- editor -->
   <section class="editor flex column space-between">
 
-    <nav class="nav-bar-bg"> </nav>
+    <nav class="nav-bar-bg flex align-center"><img src="./img/LOGO.png" width="70" alt="logo" class="logo">
+    </nav>
 
     <div class="canvas-container container">
       <span class="flex justify-center  ">
-        <div onclick=onShowGallery() class="go-back">Go Back</div>
+        <div onclick=onShowGallery() class="go-back">Gallery</div>
         <a class="download" href="#" onclick="downloadImg(this)" download="a.gif">Download</a>
       </span>
-      <canvas onclick="showLocation(event)" id="myCanvas" width="502" height="502"></canvas>
+      <canvas onclick="showLocation(event)" id="myCanvas" width="500" height="500"></canvas>
       <div class="flex column">
 
         <input type="text" name="text-input" id="text-input" onkeyup="showText(event)">
-        <section class="options flex">
-          <button onclick="onDeleteClick()"> <img src="./img/icons/trash.png" width="20" alt=""> </button>
-          <button onclick="onFontUp()"><img src="./img/icons/fontUp.png" width="20" alt=""></button>
-          <button onclick="onFontDown()"><img src="./img/icons/fontDown.png" width="20" alt=""></button>
-          <button onclick="onMoveUp()"><img src="./img/icons/upArrow.png" width="14" alt=""></button>
-          <button onclick="onMoveDown()"><img src="./img/icons/downArrow.png" width="14" alt=""></button>
-          <button onclick="onSwitchLines()"><img src="./img/icons/onSwitchLines.png" width="20" alt=""></button>
+        <section class="options flex wrap">
+          <button onclick="onDeleteClick()"> <img src="./img/icons/trash.png" width="30" alt=""> </button>
+          <button onclick="onFontUp()"><img src="./img/icons/fontUp.png" width="30" alt=""></button>
+          <button onclick="onFontDown()"><img src="./img/icons/fontDown.png" width="30" alt=""></button>
+          <button onclick="onMoveUp()"><img src="./img/icons/upArrow.png" width="20" alt=""></button>
+          <button onclick="onMoveDown()"><img src="./img/icons/downArrow.png" width="20" alt=""></button>
+          <button onclick="onSwitchLines(event)"><img src="./img/icons/onSwitchLines.png" width="30" alt=""></button>
           <button><input type="color" name="stroke" id="fill-color" value="#ffffff"
               onchange="onUpdateFillColor()"></button>
           <button> <input type="color" name="fill" id="stroke-color" value="#000000"
@@ -52,8 +53,8 @@
   <!-- gallery -->
 
   <section class="gallery">
-    <nav class="nav-container flex ">
-    </nav>
+      <nav class="nav-bar-bg flex align-center"><img src="./img/LOGO.png" width="70" alt="logo" class="logo">
+      </nav>
     <div class="img-container container flex justify-center">
       <main class="main  grid container" id="images"></main>
     </div>
@@ -61,7 +62,7 @@
 
   <footer class="flex align-center ">
 
-    <div class="right">All rights reserved 2019</div>
+    <div class="rights">All rights reserved 2019</div>
   </footer>
   <script src="./js/memeService.js"></script>
   <script src="./js/main.js"></script>

@@ -105,7 +105,8 @@ function onMoveDown() {
     draw();
 }
 
-function onSwitchLines() {
+function onSwitchLines(event) {
+    event.preventDefault
     gCurrLine++;
     console.log(gMeme.txts[gCurrLine - 1].y);
     console.log(gCurrLine - 1);
@@ -120,7 +121,7 @@ function onSwitchLines() {
 
     setTimeout(function() {
         draw();
-    }, 3000);
+    }, 1000);
 
 }
 
