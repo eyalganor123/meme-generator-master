@@ -67,7 +67,7 @@ function changeGMeme(text) {
     draw();
 }
 
-function downloadImg(elLink) {debugger;
+function downloadImg(elLink) {
     gCanvas.crossOrigin='';
     const data = gCanvas.toDataURL();
     elLink.href = data
